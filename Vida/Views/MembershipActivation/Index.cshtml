@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="post-header">
+        <h1>Membership Activation</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-8 pull-right">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Member Name">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-4 -->
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <input type="text" class="form-control datepicker" placeholder="Membership Date">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-4 -->
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <a href="" class="btn btn-primary">Find record</a>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-4 -->
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>(4) Records has been found.</h4>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact No</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Tamp trump</td>
+                        <td>0921-123-123</td>
+                        <td><span class="label label-warning">InActive</span></td>
+                        <td>
+                            <a class="blue-text"><span class="glyphicon glyphicon-plus"></span> Add</a>
+                            <a class="red-text"><span class="glyphicon glyphicon-remove"></span> Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tamp trump</td>
+                        <td>0921-123-123</td>
+                        <td><span class="label label-default">Active</span></td>
+                        <td>
+                            <a class="blue-text"><span class="glyphicon glyphicon-plus"></span> Add</a>
+                            <a class="red-text"><span class="glyphicon glyphicon-remove"></span> Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tamp trump</td>
+                        <td>0921-123-123</td>
+                        <td><span class="label label-default">Active</span></td>
+                        <td>
+                            <a class="blue-text"><span class="glyphicon glyphicon-plus"></span> Add</a>
+                            <a class="red-text"><span class="glyphicon glyphicon-remove"></span> Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tamp trump</td>
+                        <td>0921-123-123</td>
+                        <td><span class="label label-warning">InActive</span></td>
+                        <td>
+                            <a class="blue-text"><span class="glyphicon glyphicon-plus"></span> Add</a>
+                            <a class="red-text"><span class="glyphicon glyphicon-remove"></span> Remove</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <nav aria-label="Page navigation">
+                <ul class="pagination pull-right">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript">
+      $(document).ready(function() {
+       $('.datepicker').datepicker();
+      });
+</script>

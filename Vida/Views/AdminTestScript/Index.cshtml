@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin Test Script</h2>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 center-block">
+            <form class="form-horizontal" action=" " method="post" id="contact_form">
+                <fieldset>
+                    <div>
+                        <div class="col-md-10 center-block">
+                            <div class="post-header">
+                                <h1>Membership</h1>
+                            </div>
+                            <p>Already a member? <a href="index.html">Sign in here.</a></p>
+                            <hr>
+                            <div class="alert alert-info" role="alert">
+                                <p>Inputs with (<span class="required"></span>) is a required fields.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">User Name</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input name="User_name" placeholder="User Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Password</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+                                <input name="Password" placeholder="Password" class="form-control" type="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Confirm Password</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+                                <input name="confirm_password" placeholder="Confirm Password" class="form-control" type="password">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Email Address</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input name="email" placeholder="Email Address" class="form-control" type="email">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Contact No.</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <input name="contact_no" placeholder="(639)" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Upload Picture</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-folder-close"></i></span>
+                                <input name="Upload_Picture" placeholder="Browse Image" class="form-control" type="file">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Referer</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <input name="Referer" placeholder="Referer" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Direct Upline ID</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <input name="Direct_Upline_ID" placeholder="Direct Upline ID" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Group</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-compressed"></i></span>
+                                <input name="Group" placeholder="Group" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <button type="submit" class="btn btn-primary pull-right">
+                                SUBMIT <span class="glyphicon glyphicon-send"></span>
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div> <!-- /container -->
