@@ -27,7 +27,7 @@ namespace AutoFTP
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + remoteFile);
+                ftpRequest = (FtpWebRequest) FtpWebRequest.Create(host + "/" + remoteFile);
                 /* Log in to the FTP Server with the User Name and Password Provided */
                 ftpRequest.Credentials = new NetworkCredential(user, pass);
                 /* When in doubt, use these options */
@@ -37,7 +37,7 @@ namespace AutoFTP
                 /* Specify the Type of FTP Request */
                 ftpRequest.Method = WebRequestMethods.Ftp.DownloadFile;
                 /* Establish Return Communication with the FTP Server */
-                ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+                ftpResponse = (FtpWebResponse) ftpRequest.GetResponse();
                 /* Get the FTP Server's Response Stream */
                 ftpStream = ftpResponse.GetResponseStream();
                 /* Open a File Stream to Write the Downloaded File */
@@ -54,14 +54,20 @@ namespace AutoFTP
                         bytesRead = ftpStream.Read(byteBuffer, 0, bufferSize);
                     }
                 }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine(ex.ToString());
+                }
                 /* Resource Cleanup */
                 localFileStream.Close();
                 ftpStream.Close();
                 ftpResponse.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.ToString());
+            }
             return;
         }
 
@@ -98,7 +104,8 @@ namespace AutoFTP
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.ToString());
+                    //Console.WriteLine(ex.ToString());
+
                 }
                 /* Resource Cleanup */
                 localFileStream.Close();
@@ -107,7 +114,7 @@ namespace AutoFTP
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                //Console.WriteLine(ex.ToString());
             }
             return;
         }
@@ -118,7 +125,7 @@ namespace AutoFTP
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + deleteFile);
+                ftpRequest = (FtpWebRequest) WebRequest.Create(host + "/" + deleteFile);
                 /* Log in to the FTP Server with the User Name and Password Provided */
                 ftpRequest.Credentials = new NetworkCredential(user, pass);
                 /* When in doubt, use these options */
@@ -128,12 +135,15 @@ namespace AutoFTP
                 /* Specify the Type of FTP Request */
                 ftpRequest.Method = WebRequestMethods.Ftp.DeleteFile;
                 /* Establish Return Communication with the FTP Server */
-                ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+                ftpResponse = (FtpWebResponse) ftpRequest.GetResponse();
                 /* Resource Cleanup */
                 ftpResponse.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.ToString());
+            }
             return;
         }
 
@@ -143,7 +153,7 @@ namespace AutoFTP
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + currentFileNameAndPath);
+                ftpRequest = (FtpWebRequest) WebRequest.Create(host + "/" + currentFileNameAndPath);
                 /* Log in to the FTP Server with the User Name and Password Provided */
                 ftpRequest.Credentials = new NetworkCredential(user, pass);
                 /* When in doubt, use these options */
@@ -155,12 +165,15 @@ namespace AutoFTP
                 /* Rename the File */
                 ftpRequest.RenameTo = newFileName;
                 /* Establish Return Communication with the FTP Server */
-                ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+                ftpResponse = (FtpWebResponse) ftpRequest.GetResponse();
                 /* Resource Cleanup */
                 ftpResponse.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.ToString());
+            }
             return;
         }
 
@@ -170,7 +183,7 @@ namespace AutoFTP
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + newDirectory);
+                ftpRequest = (FtpWebRequest) WebRequest.Create(host + "/" + newDirectory);
                 /* Log in to the FTP Server with the User Name and Password Provided */
                 ftpRequest.Credentials = new NetworkCredential(user, pass);
                 /* When in doubt, use these options */
@@ -180,12 +193,15 @@ namespace AutoFTP
                 /* Specify the Type of FTP Request */
                 ftpRequest.Method = WebRequestMethods.Ftp.MakeDirectory;
                 /* Establish Return Communication with the FTP Server */
-                ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+                ftpResponse = (FtpWebResponse) ftpRequest.GetResponse();
                 /* Resource Cleanup */
                 ftpResponse.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.ToString());
+            }
             return;
         }
 
@@ -195,7 +211,7 @@ namespace AutoFTP
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + fileName);
+                ftpRequest = (FtpWebRequest) FtpWebRequest.Create(host + "/" + fileName);
                 /* Log in to the FTP Server with the User Name and Password Provided */
                 ftpRequest.Credentials = new NetworkCredential(user, pass);
                 /* When in doubt, use these options */
@@ -205,7 +221,7 @@ namespace AutoFTP
                 /* Specify the Type of FTP Request */
                 ftpRequest.Method = WebRequestMethods.Ftp.GetDateTimestamp;
                 /* Establish Return Communication with the FTP Server */
-                ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+                ftpResponse = (FtpWebResponse) ftpRequest.GetResponse();
                 /* Establish Return Communication with the FTP Server */
                 ftpStream = ftpResponse.GetResponseStream();
                 /* Get the FTP Server's Response Stream */
@@ -213,8 +229,14 @@ namespace AutoFTP
                 /* Store the Raw Response */
                 string fileInfo = null;
                 /* Read the Full Response Stream */
-                try { fileInfo = ftpReader.ReadToEnd(); }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                try
+                {
+                    fileInfo = ftpReader.ReadToEnd();
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine(ex.ToString());
+                }
                 /* Resource Cleanup */
                 ftpReader.Close();
                 ftpStream.Close();
@@ -223,7 +245,10 @@ namespace AutoFTP
                 /* Return File Created Date Time */
                 return fileInfo;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.ToString());
+            }
             /* Return an Empty string Array if an Exception Occurs */
             return "";
         }
@@ -234,7 +259,7 @@ namespace AutoFTP
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (System.Net.FtpWebRequest)System.Net.FtpWebRequest.Create(host + "/" + fileName);
+                ftpRequest = (System.Net.FtpWebRequest) System.Net.FtpWebRequest.Create(host + "/" + fileName);
                 /* Log in to the FTP Server with the User Name and Password Provided */
                 ftpRequest.Credentials = new NetworkCredential(user, pass);
                 /* When in doubt, use these options */
@@ -244,7 +269,7 @@ namespace AutoFTP
                 /* Specify the Type of FTP Request */
                 ftpRequest.Method = WebRequestMethods.Ftp.GetFileSize;
                 /* Establish Return Communication with the FTP Server */
-                ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+                ftpResponse = (FtpWebResponse) ftpRequest.GetResponse();
                 /* Establish Return Communication with the FTP Server */
                 ftpStream = ftpResponse.GetResponseStream();
                 /* Get the FTP Server's Response Stream */
@@ -252,8 +277,17 @@ namespace AutoFTP
                 /* Store the Raw Response */
                 string fileInfo = null;
                 /* Read the Full Response Stream */
-                try { while (ftpReader.Peek() != -1) { fileInfo = ftpReader.ReadToEnd(); } }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                try
+                {
+                    while (ftpReader.Peek() != -1)
+                    {
+                        fileInfo = ftpReader.ReadToEnd();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine(ex.ToString());
+                }
                 /* Resource Cleanup */
                 ftpReader.Close();
                 ftpStream.Close();
@@ -262,7 +296,10 @@ namespace AutoFTP
                 /* Return File Size */
                 return fileInfo;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.ToString());
+            }
             /* Return an Empty string Array if an Exception Occurs */
             return "";
         }
@@ -273,7 +310,7 @@ namespace AutoFTP
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + directory);
+                ftpRequest = (FtpWebRequest) FtpWebRequest.Create(host + "/" + directory);
                 /* Log in to the FTP Server with the User Name and Password Provided */
                 ftpRequest.Credentials = new NetworkCredential(user, pass);
                 /* When in doubt, use these options */
@@ -283,7 +320,7 @@ namespace AutoFTP
                 /* Specify the Type of FTP Request */
                 ftpRequest.Method = WebRequestMethods.Ftp.ListDirectory;
                 /* Establish Return Communication with the FTP Server */
-                ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+                ftpResponse = (FtpWebResponse) ftpRequest.GetResponse();
                 /* Establish Return Communication with the FTP Server */
                 ftpStream = ftpResponse.GetResponseStream();
                 /* Get the FTP Server's Response Stream */
@@ -291,18 +328,38 @@ namespace AutoFTP
                 /* Store the Raw Response */
                 string directoryRaw = null;
                 /* Read Each Line of the Response and Append a Pipe to Each Line for Easy Parsing */
-                try { while (ftpReader.Peek() != -1) { directoryRaw += ftpReader.ReadLine() + "|"; } }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                try
+                {
+                    while (ftpReader.Peek() != -1)
+                    {
+                        directoryRaw += ftpReader.ReadLine() + "|";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine(ex.ToString());
+                }
                 /* Resource Cleanup */
                 ftpReader.Close();
                 ftpStream.Close();
                 ftpResponse.Close();
                 ftpRequest = null;
                 /* Return the Directory Listing as a string Array by Parsing 'directoryRaw' with the Delimiter you Append (I use | in This Example) */
-                try { string[] directoryList = directoryRaw.Split("|".ToCharArray()); return directoryList; }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                try
+                {
+                    string[] directoryList = directoryRaw.Split("|".ToCharArray());
+                    return directoryList;
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine(ex.ToString());
+                }
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.ToString());
+            }
+
             /* Return an Empty string Array if an Exception Occurs */
             return new string[] { "" };
         }
@@ -313,7 +370,7 @@ namespace AutoFTP
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + directory);
+                ftpRequest = (FtpWebRequest) FtpWebRequest.Create(host + "/" + directory);
                 /* Log in to the FTP Server with the User Name and Password Provided */
                 ftpRequest.Credentials = new NetworkCredential(user, pass);
                 /* When in doubt, use these options */
@@ -323,7 +380,7 @@ namespace AutoFTP
                 /* Specify the Type of FTP Request */
                 ftpRequest.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
                 /* Establish Return Communication with the FTP Server */
-                ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
+                ftpResponse = (FtpWebResponse) ftpRequest.GetResponse();
                 /* Establish Return Communication with the FTP Server */
                 ftpStream = ftpResponse.GetResponseStream();
                 /* Get the FTP Server's Response Stream */
@@ -331,18 +388,37 @@ namespace AutoFTP
                 /* Store the Raw Response */
                 string directoryRaw = null;
                 /* Read Each Line of the Response and Append a Pipe to Each Line for Easy Parsing */
-                try { while (ftpReader.Peek() != -1) { directoryRaw += ftpReader.ReadLine() + "|"; } }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                try
+                {
+                    while (ftpReader.Peek() != -1)
+                    {
+                        directoryRaw += ftpReader.ReadLine() + "|";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine(ex.ToString());
+                }
                 /* Resource Cleanup */
                 ftpReader.Close();
                 ftpStream.Close();
                 ftpResponse.Close();
                 ftpRequest = null;
                 /* Return the Directory Listing as a string Array by Parsing 'directoryRaw' with the Delimiter you Append (I use | in This Example) */
-                try { string[] directoryList = directoryRaw.Split("|".ToCharArray()); return directoryList; }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                try
+                {
+                    string[] directoryList = directoryRaw.Split("|".ToCharArray());
+                    return directoryList;
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine(ex.ToString());
+                }
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.ToString());
+            }
             /* Return an Empty string Array if an Exception Occurs */
             return new string[] { "" };
         }
