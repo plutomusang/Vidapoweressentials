@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vida", "Vida\Vida.csproj", "{107F0812-38AE-41E4-AA88-49BBD01FC1F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFTP", "AutoFTP\AutoFTP.csproj", "{76BCEC0D-55A2-4B76-9B81-66D4EB6F9291}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{107F0812-38AE-41E4-AA88-49BBD01FC1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{107F0812-38AE-41E4-AA88-49BBD01FC1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{107F0812-38AE-41E4-AA88-49BBD01FC1F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BCEC0D-55A2-4B76-9B81-66D4EB6F9291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BCEC0D-55A2-4B76-9B81-66D4EB6F9291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BCEC0D-55A2-4B76-9B81-66D4EB6F9291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BCEC0D-55A2-4B76-9B81-66D4EB6F9291}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
