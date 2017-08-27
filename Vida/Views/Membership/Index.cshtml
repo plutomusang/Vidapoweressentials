@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 center-block">
-            <form class="form-horizontal" action=" " method="post" id="contact_form">
+            <form class="form-horizontal" action=" " method="post" id="membership_form">
                 <fieldset>
                     <div>
                         <div class="col-md-10 center-block">
@@ -25,7 +25,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="first_name" placeholder="First Name" class="form-control" type="text">
+                                <input name="FirstName" placeholder="First Name" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,17 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="last_name" placeholder="Last Name" class="form-control" type="text">
+                                <input name="LastName" placeholder="Last Name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">MI</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input name="MI" placeholder="MI" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
@@ -45,7 +55,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                <select class="form-control">
+                                <select name="Gender" class="form-control">
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
@@ -58,7 +68,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                <input name="Birth_date" placeholder="Birth date" class="form-control datepicker" type="text">
+                                <input name="Birthdate" placeholder="Birth date" class="form-control datepicker" type="text">
                             </div>
                         </div>
                     </div>
@@ -68,7 +78,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-                                <input name="City_Province" placeholder="City/Province" class="form-control" type="text">
+                                <input name="CityProvince" placeholder="City/Province" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
@@ -88,7 +98,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="User_name" placeholder="User Name" class="form-control" type="text">
+                                <input name="UserName" placeholder="User Name" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
@@ -108,7 +118,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
-                                <input name="confirm_password" placeholder="Confirm Password" class="form-control" type="password">
+                                <input  placeholder="Confirm Password" class="form-control" type="password">
                             </div>
                         </div>
                     </div>
@@ -118,7 +128,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                <input name="email" placeholder="Email Address" class="form-control" type="email">
+                                <input name="EmailAddress" placeholder="Email Address" class="form-control" type="email">
                             </div>
                         </div>
                     </div>
@@ -128,7 +138,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input name="contact_no" placeholder="(639)" class="form-control" type="text">
+                                <input name="ContactNo" placeholder="(639)" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
@@ -138,17 +148,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-folder-close"></i></span>
-                                <input name="Upload_Picture" placeholder="Browse Image" class="form-control" type="file">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Referer</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input name="Referer" placeholder="Referer" class="form-control" type="text">
+                                <input name="Picture" placeholder="Browse Image" class="form-control" type="file">
                             </div>
                         </div>
                     </div>
@@ -157,25 +157,61 @@
                         <label class="col-md-4 control-label required">Direct Upline ID</label>
                         <div class="col-md-6">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input name="Direct_Upline_ID" placeholder="Direct Upline ID" class="form-control" type="text">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input name="DirectUpline" placeholder="Direct Upline ID" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label required">Group</label>
+                        <label class="col-md-4 control-label required">Referer</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input name="Referrer" placeholder="Referrer" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Position</label>
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-compressed"></i></span>
-                                <input name="Group" placeholder="Group" class="form-control" type="text">
+                                <select name="Position" class="form-control">
+                                    <option>L</option>
+                                    <option>R</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Package Type</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-compressed"></i></span>
+                                <select name="PackageType" class="form-control">
+                                    <option>A</option>
+                                    <option>B</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label required">Validation Code</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-compressed"></i></span>
+                                <input name="ValidationCode" placeholder="ValidationCode" class="form-control" type="text">
                             </div>
                         </div>
                     </div>
                     <!-- Button -->
                     <div class="form-group">
                         <div class="col-md-10">
-                            <button type="submit" class="btn btn-primary pull-right">
+                            <button id ="membership_submit" type="submit" class="btn btn-primary pull-right">
                                 SUBMIT <span class="glyphicon glyphicon-send"></span>
                             </button>
                         </div>

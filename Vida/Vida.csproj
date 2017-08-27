@@ -124,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\GenealogyController.cs" />
+    <Compile Include="API\LoginController.cs" />
+    <Compile Include="API\PowerCallController.cs" />
+    <Compile Include="API\SimpleCallController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -140,6 +143,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\KeyValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +153,7 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\Genealogy.css" />
     <Content Include="css\main.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\favicon.png" />
@@ -157,6 +162,7 @@
     <Content Include="images\slider\slide1.jpg" />
     <Content Include="images\slider\slide2.jpg" />
     <Content Include="images\slider\slide3.jpg" />
+    <Content Include="images\slider\slide4.jpg" />
     <Content Include="images\UserBlue.png" />
     <Content Include="images\UserGray.png" />
     <Content Include="images\UserPlus.png" />
@@ -231,7 +237,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="images\slider\Thumbs.db" />
     <Content Include="images\Thumbs.db" />
     <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\Vida.pubxml" />
@@ -283,7 +288,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,0 +1,93 @@
+
+
+
+fieldset {
+
+margin: 50px 50px 50px 50px;
+padding-bottom:300px;
+
+}
+
+div.parent {
+
+    background-color: green;
+}
+
+p {
+    font-size:80px;
+    padding-left: 0;
+    padding-top: 200px;
+    color:gray;
+}
+
+div.boy {
+	
+	margin: 20px;
+	position:absolute;
+	left:500px;
+	top:100px;
+
+}
+
+div.boy1 {
+	
+	position:relative;
+	top:10px;
+	left:400px;
+	
+}
+
+div.boy2{
+
+    position:absolute;
+	top:280px;
+	left:-10px;
+	
+}
+
+div.boy3 {
+	
+    position: absolute;
+    top:280px;
+    left:800px;
+
+}
+
+
+div.girl {
+
+	margin: 110px;
+	position:absolute;
+	top:550px;
+	left:200px;
+
+
+}
+
+
+div.girl2 {
+
+position:absolute;
+	top:0px;
+	left:400px;
+}
+
+
+div.girl3 {
+
+position:absolute;
+	top:0px;
+	left:800px;
+}
+
+
+div.girl4 {
+
+position:absolute;
+	top:0px;
+	left:1200px;
+}
+
+div#icon {
+position:relative; 
+left:10px; }

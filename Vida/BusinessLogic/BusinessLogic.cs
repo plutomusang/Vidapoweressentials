@@ -1,15 +1,56 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.Entity.Migrations.Sql;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using Microsoft.Ajax.Utilities;
+using Vida.Models;
 
 namespace Vida.BusinessLogic
 {
     public class BusinessClass
     {
+        public Hashtable DesrializeItems(string items)
+        {
+            string[] sep = new string[] { "&" };
+            string[] result = items.Split(sep, StringSplitOptions.None);
 
+            Hashtable hs = new Hashtable();
+            foreach (string src in result)
+            {
+                string[] sp = new string[] { "=" };
+                string[] rs = src.Split(sp, StringSplitOptions.None);
+                if (rs.Length == 1)
+                {
+                    hs.Add(rs[0], "");
+                }
+                else
+                {
+                    if (rs[1] != "<?xml version") { rs[1] = rs[1].Replace('+', ' '); }
+                    else
+                    {
+                        string s = src.Replace(rs[0] + "=", "");
+                        try
+                        {
+                            s = src.Substring(rs[0].Length + 1, src.Length - (rs[0].Length + 1));
+                        }
+                        catch (Exception ex)
+                        {
+                            s = src.Replace(rs[0] + "=", "");
+                        }
+                        rs[1] = s;
+                    }
+
+
+                    hs.Add(rs[0], rs[1]);
+                }
+            }
+            return hs;
+        }
         public string ProcessSQLToJson(string storedProc, Dictionary<string, string> mParam)
         {
             string message = "";
@@ -42,7 +83,90 @@ namespace Vida.BusinessLogic
 
             return message;
         }
+        public string Login(string username, string password, string RemoteIP, string RemotePort)
+        {
+            BusinessClass blBusinessClass = new BusinessClass();
+            Dictionary<string, string> paramdictionary = new Dictionary<string, string>();
 
+            paramdictionary.Add("UserName", username);
+            paramdictionary.Add("Password", password);
+            paramdictionary.Add("ApiIp", RemoteIP);
+            paramdictionary.Add("ApiPort", RemotePort);
+
+            
+            string message = "";
+
+
+            try
+            {
+
+                message = blBusinessClass.ProcessSQLToJson("ValidateUser", paramdictionary);
+
+            }
+            catch (Exception ex)
+            {
+                message = "{\"error\":\"" + ex.Message + "\"}";
+            }
+
+
+            return message;
+        }
+
+        public string  Logout(string key)
+        {
+            BusinessClass blBusinessClass = new BusinessClass();
+            Dictionary<string, string> paramdictionary = new Dictionary<string, string>();
+
+            paramdictionary.Add("ApiKey", key);
+
+
+            string message = "";
+
+
+            try
+            {
+
+                message = blBusinessClass.ProcessSQLToJson("sp_Logout", paramdictionary);
+
+            }
+            catch (Exception ex)
+            {
+                message = "{\"error\":\"" + ex.Message + "\"}";
+            }
+
+
+            return message;
+        }
+        public bool ValidateKey(string key, string RemoteIP, string RemotePort)
+        {
+            BusinessClass blBusinessClass = new BusinessClass();
+            Dictionary<string, string> paramdictionary = new Dictionary<string, string>();
+
+            paramdictionary.Add("ApiKey", key);
+            paramdictionary.Add("ApiIp", RemoteIP);
+            paramdictionary.Add("ApiPort", RemotePort);
+
+
+            string message = "";
+
+
+            try
+            {
+
+                message = blBusinessClass.ProcessSQLToJson("ValidateKey", paramdictionary);
+
+            }
+            catch (Exception ex)
+            {
+                message = "{\"error\":\"" + ex.Message + "\"}";
+            }
+            bool retMsg = true;
+
+            if (message.IndexOf("Fail") > -1) retMsg = false;
+            if (message.IndexOf("error") > -1) retMsg = false;
+
+            return retMsg;
+        }
     }
 
     public sealed class MyDataAccess
