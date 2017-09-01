@@ -1,13 +1,74 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Vida.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult Signin()
+        {
+            string appkey = Request.QueryString["appkey"];
+            string token = Request.QueryString["tok"];
+            string redirectUrl = Request.QueryString["ReturnUrl"] == "" ? "Home" : Request.QueryString["ReturnUrl"];
+
+            //-- lets check if cookie is available then lets overwrite
+            HttpCookie appCookie = Request.Cookies["appKey"];
+            if (appCookie != null)
+            {
+                appkey = appCookie.Value;
+            }
+
+            //-- lets compare if its legit
+            string code = ConfigurationManager.AppSettings["SaltKey"].ToString() + token;
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(code);
+            byte[] hash = md5.ComputeHash(inputBytes);
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("X2"));
+            }
+
+            if (sb.ToString() == appkey)
+            {
+                //-- lets authenticate the user
+                FormsAuthentication.SetAuthCookie(null, true);
+                Session["token"] = token;
+                if (redirectUrl == "Home")
+                {
+                    redirectUrl = "UserAccount";
+                }
+                else
+                {
+                    //--- lets remove the first slash if present
+                    if (redirectUrl.Substring(0, 1) == "/")
+                    {
+                        redirectUrl = redirectUrl.Substring(1, redirectUrl.Length - 1);
+                    }
+                }
+            }
+
+
+            return RedirectToAction("Index", redirectUrl);
+        }
+
+        public ActionResult Signout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+
+        }
+
         //
         // GET: /Home/
 
