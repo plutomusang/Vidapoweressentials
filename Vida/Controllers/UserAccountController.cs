@@ -6,11 +6,12 @@ using System.Web.Mvc;
 
 namespace Vida.Controllers
 {
+    [UserSession]
     public class UserAccountController : Controller
     {
         //
         // GET: /UserAccount/
-
+        [UserSession]
         public ActionResult Index()
         {
             return View();

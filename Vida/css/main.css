@@ -154,6 +154,15 @@ ul#company-details>li{
     padding: 40px 0px 20px 0px;
     background-color: #f7f7f7;
 }
+.Product_name {
+    margin-top: 0;
+}
+.product-container {
+    border-bottom: 1px dashed #eee;
+    margin-bottom: 10vh;
+    padding-bottom: 10vh;
+}
+
 /* Content */
 .content {
     padding-top: 30px;
@@ -228,6 +237,7 @@ ul#company-details>li{
     font-size: 12px;
 }
 /* Testimonials end*/
+
 
 
 
