@@ -285,6 +285,7 @@
     <Content Include="Views\MembershipActivation\Index.cshtml" />
     <Content Include="Views\AdminTestScript\Index.cshtml" />
     <Content Include="Views\Genealogy\Index.cshtml" />
+    <Content Include="Views\Shared\_NavMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
