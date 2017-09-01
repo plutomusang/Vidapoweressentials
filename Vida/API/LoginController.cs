@@ -19,7 +19,6 @@ namespace Vida.API
     public class LoginController : ApiController
     {
 
-
         public JObject Post()
         {
             BusinessClass bl = new BusinessClass();
@@ -43,8 +42,61 @@ namespace Vida.API
             return jsonObject;
 
         }
-    }
+        public JObject Get()
+        {
+            BusinessClass bl = new BusinessClass();
 
+            var qs = HttpUtility.ParseQueryString(Request.RequestUri.Query);
+            string genkey = qs["key"];
+            string sjson = "{\"ApiKey\":\"" + "\"}";
+
+
+            if (genkey == "1234567890")
+            {
+
+                string ip = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+                string port = System.Convert.ToString(System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_PORT"]);
+                if (string.IsNullOrEmpty(ip)) { ip = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]; }
+                sjson = bl.Login(qs["Username"], qs["Password"], ip, port);
+            }
+
+
+            var jsonObject = JObject.Parse(sjson);
+            return jsonObject;
+
+        }
+    }
+    public class Login2Controller : ApiController
+    {
+
+        public string Post(List<string> val)
+        {
+            BusinessClass bl = new BusinessClass();
+
+            string frm = val[0];
+            frm = frm.Replace("%40", "@");
+            frm = frm.Replace('+', ' ');
+            frm = frm.Replace("%2C", ",");
+            Hashtable qs = bl.DesrializeItems(frm);
+
+            string genkey = qs["key"].ToString();
+            string sjson = "{\"ApiKey\":\"" + "\"}";
+
+
+            if (genkey == "1234567890")
+            {
+
+                string ip = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+                string port = System.Convert.ToString(System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_PORT"]);
+                if (string.IsNullOrEmpty(ip)) { ip = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]; }
+                sjson = bl.Login(qs["UserName"].ToString(), qs["Password"].ToString(), ip, port);
+            }
+
+            return sjson;
+
+        }
+
+    }
     public class LogOutController : ApiController
     {
 
