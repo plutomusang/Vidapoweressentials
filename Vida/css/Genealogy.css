@@ -103,3 +103,18 @@ right connector from last child*/
     width: 962px;
     margin: auto;
 }
+.ctrlHeight {
+    height: 27px;
+    position: relative;
+    float: left;
+    top: 12px;
+    margin: auto;
+}
+
+.ctrlContainer {
+    width: 26px;
+    height: 55px;
+    padding: 1px;
+    float: left;
+    margin: 1px;
+}
