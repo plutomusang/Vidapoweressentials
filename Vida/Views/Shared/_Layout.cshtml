@@ -6,65 +6,53 @@
     <title>@ViewBag.Title</title>
 
     <link href="~/css/main.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    @if (Session["token"] != null) {
+    <script type="text/javascript">
+        var jsToken = '@Session["token"].ToString()';
+        var jsEmail = '@Session["email"].ToString()';
+        var jsUID = '@Session["userId"].ToString()';
+    </script>
+            }
 </head>
 <body>
-<div id="msg"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-3">
-            <img class="img-responsive" src="./images/vida-logo.png"></img>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-9">
-            <ul id="company-details">
-                <li>Vida Power Essentials</li>
-                <li>Door 4 LDL Building Lacson st. Cor. Cervantes St. Bo.Obrero St., Davao City</li>
-                <li>Tel no: 082-227-9314</li>
-            </ul>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<nav class="navbar navbar-default navbar-static-top">
+    <div id="msg"></div>
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <img class="img-responsive" src="./images/vida-logo.png"></img>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-9">
+                <ul id="company-details">
+                    <li>Vida Power Essentials</li>
+                    <li>Door 4 LDL Building Lacson st. Cor. Cervantes St. Bo.Obrero St., Davao City</li>
+                    <li>Tel no: 082-227-9314</li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="product">Products</a></li>
-                <li><a href="ProductManagement">Product Management</a></li>
-                <li><a href="MembershipActivation">Membership Activation</a></li>
-                <li><a href="Membership">Membership</a></li>
-                <li><a href="useraccount">My Dashboard</a></li>
-                <li><a href="Genealogy">Genealogy</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
     </div>
-</nav>
-@RenderBody()
+    @Html.Partial("_NavMenu")
+    @RenderBody()
     <footer class="footer">
-        
+
         <hr>
         <div class="container">
             <p>&copy; 2017</p>
         </div>
     </footer>
-<script src="~/js/bootstrap.min.js"></script>
-<script src="~/js/bootstrap-imageupload.js"></script>
-<script>
-    var $imageupload = $('.imageupload');
-    $imageupload.imageupload();
-</script>
 
-<script src="~/js/main.js"></script>
+    <script src="/js/common.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
-

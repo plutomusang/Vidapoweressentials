@@ -61,7 +61,7 @@ namespace Vida.API
         }
         public JObject Post()
         {
-            var qs = HttpUtility.ParseQueryString(Request.RequestUri.Query);
+            var qs = HttpUtility.ParseQueryString(Request.Content.ReadAsStringAsync().Result);
             string key = qs["key"];
             string storedProc = qs["StoredProc"];
 

@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -144,6 +145,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserSession.cs" />
     <Compile Include="Models\KeyValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -249,6 +251,9 @@
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <None Include="js\main.js" />
     <None Include="js\Genealogy.js" />
+    <Content Include="js\common.js" />
+    <Content Include="js\login.js" />
+    <Content Include="js\useraccount.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -292,6 +297,7 @@
     <Content Include="Views\MembershipActivation\Index.cshtml" />
     <Content Include="Views\AdminTestScript\Index.cshtml" />
     <Content Include="Views\Genealogy\Index.cshtml" />
+    <Content Include="Views\Shared\_NavMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,9 +1,12 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<script src="~/js/Genealogy.js"></script>
 
-<link href="~/css/Genealogy.css" rel="stylesheet" />
+@section Scripts {
+    <script src="~/js/Genealogy.js"></script>
+    <link href="~/css/Genealogy.css" rel="stylesheet" />
+}
+
 
 
 <div class="container">
@@ -12,112 +15,7 @@
     </div>
     <div class="row">
         <div class="tree">
-            <ul>
-                <li>
-                    <a href="JavaScript:;" data-toggle="modal" data-target="#Assign-downline">
-                        <img class="img-responsive" src="./images/if_User_Generic_1_1218733.png"></img>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" src="./images/if_User_Yuppie_3_1218716.png"></img>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-responsive" src="./images/if_User_Yuppie_3_1218716.png"></img>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="./images/if_User_Yuppie_3_1218716.png"></img>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="./images/if_User_Generic_1_1218733.png"></img>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-responsive" src="./images/if_User_Generic_1_1218733.png"></img>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="./images/if_User_Yuppie_3_1218716.png"></img>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="./images/if_User_Yuppie_3_1218716.png"></img>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" src="./images/if_User_Generic_1_1218733.png"></img>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-responsive" src="./images/if_User_Generic_1_1218733.png"></img>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="./images/if_User_Generic_1_1218733.png"></img>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="./images/if_User_Yuppie_3_1218716.png"></img>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="ctrlContainer">
-                                            <img class="img-responsive ctrlHeight" src="~/images/plusgreen.png"></img>
-                                        </div>
-                                        <div class="ctrlContainer">
-                                            <img class="img-responsive ctrlHeight" src="~/images/UserPlus.png"></img>
-                                        </div>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <div class="ctrlContainer">
-
-                                                </div>
-                                                <div class="ctrlContainer">
-
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="ctrlContainer">
-
-                                                </div>
-                                                <div class="ctrlContainer">
-
-                                                </div>
-
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+            <ul id="treeChart">
             </ul>
         </div>
     </div>

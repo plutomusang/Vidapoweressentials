@@ -1,6 +1,11 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home";
 }
+
+@section Scripts {
+    <script type="text/javascript" src="~/js/login.js"></script>
+}
+
 
     <!-- Static navbar -->
 
@@ -43,15 +48,18 @@
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4">
             <div class="account-wall">
-                <img class="img-circle center-block" src="~/images/sign-in-form-image.png" alt="">
-                <form id ="LoginFormID" class="form-signin">
+                <img class="img-circle center-block" src="./images/sign-in-form-image.png" alt="">
+                <form id="frmlogin" class="form-signin">
                     <div class="form-group">
-                        <input Name ="UserName" type="text" class="form-control" placeholder="Email" required autofocus>
+                        <input id="email" type="text" class="form-control" placeholder="Email" required autofocus>
+                        <span class="help-block has-error"></span>
                     </div>
                     <div class="form-group">
-                        <input Name ="Password" type="password" class="form-control" placeholder="Password" required>
+                        <input id="password" type="password" class="form-control" placeholder="Password" required>
+                        <span class="help-block has-error"></span>
                     </div>
-                    <button id="loginid" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    <button id="loginid" class="btn btn-lg btn-primary btn-block" type="submit"><i id="iloader" class="fa fa-refresh fa-spin" style="display:none"></i> Sign in</button>
+
                     <label class="checkbox pull-left">
                         <input type="checkbox" value="remember-me">Remember me
                     </label>

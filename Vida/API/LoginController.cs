@@ -13,6 +13,8 @@ using Vida.BusinessLogic;
 using Vida.Models;
 using System.Web.SessionState;
 using Newtonsoft.Json.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Vida.API
 {
@@ -23,12 +25,11 @@ namespace Vida.API
         {
             BusinessClass bl = new BusinessClass();
 
-            var qs = HttpUtility.ParseQueryString(Request.RequestUri.Query);
+            var qs = HttpUtility.ParseQueryString(Request.Content.ReadAsStringAsync().Result);
             string genkey = qs["key"];
-            string sjson = "{\"ApiKey\":\"" +  "\"}";
+            string sjson = "{\"ApiKey\":\"" + "\"}";
 
-
-            if (genkey == "1234567890")
+            if (genkey == ConfigurationManager.AppSettings["GeneralKey"].ToString())
             {
 
                 string ip = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
@@ -37,8 +38,41 @@ namespace Vida.API
                 sjson = bl.Login(qs["Username"], qs["Password"], ip, port);
             }
 
+            //-- lets get
 
-            var jsonObject = JObject.Parse(sjson);
+            dynamic jsonObject = JObject.Parse(sjson);
+            try
+            {
+                if (jsonObject.ValidateUser.Count > 0)
+                {
+                    string code = ConfigurationManager.AppSettings["SaltKey"].ToString() + jsonObject.ValidateUser.First.Code;
+                    MD5 md5 = System.Security.Cryptography.MD5.Create();
+
+                    byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(code);
+                    byte[] hash = md5.ComputeHash(inputBytes);
+
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < hash.Length; i++)
+                    {
+                        sb.Append(hash[i].ToString("X2"));
+                    }
+
+                    //-- lets save it in cookie
+                    HttpCookie myCookie = new HttpCookie("appKey");
+                    DateTime now = DateTime.Now;
+                    myCookie.Value = sb.ToString();
+                    myCookie.Expires = now.AddYears(50);
+
+                    jsonObject.key = sb.ToString();
+                    jsonObject.url = "home/signin";
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+
             return jsonObject;
 
         }

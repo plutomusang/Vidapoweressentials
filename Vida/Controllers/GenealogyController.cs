@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Vida.Controllers
 {
+    [UserSession]
     public class GenealogyController : Controller
     {
         //
