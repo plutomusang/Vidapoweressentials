@@ -29,7 +29,7 @@ function submitLogin() {
         // console.log(data);
         $('#password').val('');
         if (data.ValidateUser != '' && data.key != undefined && data.key != '') {
-            var buildParam = '?appkey=' + data.key + "&email=" + $('#email').val()+ "&uid=" + data.ValidateUser[0].UserID+"&tok=" + 
+            var buildParam = '?appkey=' + data.key + "&email=" + $('#email').val()+ "&uid=" + data.ValidateUser[0].GenealogyID+"&tok=" + 
                     data.ValidateUser[0].Code + '&ReturnUrl=' + getUrlParameter('ReturnUrl');
             window.location.replace(baseUrl() + data.url + buildParam);
         } else {
