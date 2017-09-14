@@ -157,41 +157,49 @@
 									</div>
 								</div>
 							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label required">Position</label>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+										<select name="Group" class="form-control">
+											<option>Left</option>
+											<option>Right</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label required">Package Type</label>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+										<select name="PackageType" class="form-control">
+											<option>Elite</option>
+											<option>Economy</option>
+										</select>
+									</div>
+								</div>
+							</div>
                         </div>
+
 
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-md-4 control-label required">Position</label>
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-									<select name="Group" class="form-control">
-										<option>Left</option>
-										<option>Right</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label required">Package Type</label>
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-									<select name ="PackageType"class="form-control">
-										<option>Elite</option>
-										<option>Economy</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
 							<label class="col-md-4 control-label required">Verification Code</label>
-							<div class="col-md-6">
+							<div class="col-md-3">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-thumbs-up"></i></span>
 									<input name="ValidationCode" placeholder="Verification Code" class="form-control" type="text">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-thumbs-up"></i></span>
+								</div>
+								<div>
+									<button id="btnVerify" type="submit" class="btn btn-primary pull-right">
+										Check <span class="glyphicon glyphicon-search"></span>
+									</button>
 								</div>
 							</div>
 						</div>
