@@ -143,7 +143,7 @@
 								<div class="col-md-6">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-										<input name="Referer" placeholder="Referer" class="form-control" type="text">
+										<input id ="mReferer" name="Referer" placeholder="Referer" class="form-control" type="text">
 									</div>
 								</div>
 							</div>
@@ -153,7 +153,7 @@
 								<div name="Direct_Upline_ID" class="col-md-6">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-										<input name="Direct_Upline_ID" placeholder="Verification Code" class="form-control" type="text">
+										<input id ="mDirect_Upline_ID" name="Direct_Upline_ID" placeholder="Verification Code" class="form-control" type="text">
 									</div>
 								</div>
 							</div>
@@ -164,10 +164,7 @@
 								<div class="col-md-6">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-										<select name="Group" class="form-control">
-											<option>Left</option>
-											<option>Right</option>
-										</select>
+										<input id="mGroup" name="Group" placeholder="Verification Code" class="form-control" type="text">
 									</div>
 								</div>
 							</div>
@@ -177,10 +174,7 @@
 								<div class="col-md-6">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-										<select name="PackageType" class="form-control">
-											<option>Elite</option>
-											<option>Economy</option>
-										</select>
+										<input id="mPackageType" name="PackageType" placeholder="Verification Code" class="form-control" type="text">
 									</div>
 								</div>
 							</div>
@@ -206,9 +200,12 @@
                         <!-- Button -->
                         <div class="form-group ">
                             <div class="col-md-10">
-                                <button id="idSubmit" type="submit" class="btn btn-primary pull-right hidden">
+                                <button id="btnSubmit" type="submit" class="btn btn-primary pull-right hidden">
                                     SUBMIT <span class="glyphicon glyphicon-send"></span>
                                 </button>
+								<button id="btnNext" type="submit" class="btn btn-primary pull-right hidden">
+									Next <span class="glyphicon glyphicon-forward"></span>
+								</button>
                                 <a href="#" id="cancel" class="btn btn-default pull-right">Cancel</a>
                             </div>
                         </div>
