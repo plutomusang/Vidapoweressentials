@@ -34,7 +34,7 @@
         <div class="modal-content">
             <div class="modal-header">
               <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
-                <h4 class="modal-title">Membership</h4>
+                <h4 id="assignTitle" class="modal-title">Add to Existing Account</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" id="contact_form">
@@ -186,27 +186,27 @@
 							</div>
                         </div>
 
-
 						<!-- Text input-->
 						<div class="form-group">
 							<label class="col-md-4 control-label required">Verification Code</label>
-							<div class="col-md-3">
+							<div class="col-md-6">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-thumbs-up"></i></span>
-									<input name="ValidationCode" placeholder="Verification Code" class="form-control" type="text">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-thumbs-up"></i></span>
+									<input id ="vCode" name="ValidationCode" placeholder="Verification Code" class="form-control" type="text">
+								    <span class="input-group-addon">
+                                        <button id="btnVerify" >
+                                            Check <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+								    
 								</div>
-								<div>
-									<button id="btnVerify" type="submit" class="btn btn-primary pull-right">
-										Check <span class="glyphicon glyphicon-search"></span>
-									</button>
-								</div>
+                                <div id="packageType"></div>
 							</div>
 						</div>
                         <!-- Button -->
-                        <div class="form-group">
+                        <div class="form-group ">
                             <div class="col-md-10">
-                                <button type="submit" class="btn btn-primary pull-right">
+                                <button id="idSubmit" type="submit" class="btn btn-primary pull-right hidden">
                                     SUBMIT <span class="glyphicon glyphicon-send"></span>
                                 </button>
                                 <a href="#" id="cancel" class="btn btn-default pull-right">Cancel</a>
