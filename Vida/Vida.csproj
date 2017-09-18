@@ -141,6 +141,7 @@
     <Compile Include="Controllers\MembershipController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductManagementController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Controllers\UserAccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -297,9 +298,11 @@
     <Content Include="Views\AdminTestScript\Index.cshtml" />
     <Content Include="Views\Genealogy\Index.cshtml" />
     <Content Include="Views\Shared\_NavMenu.cshtml" />
+    <Content Include="Views\Purchase\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

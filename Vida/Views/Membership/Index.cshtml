@@ -1,223 +1,45 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Sign In";
 }
 
+
+@section Scripts {
+    <script type="text/javascript" src="~/js/login.js"></script>
+}
+
+<section id="content">
 <div class="container">
-    <div class="row">
-        <div class="col-md-10 center-block">
-            <form class="form-horizontal" action=" " method="post" id="membership_form">
-                <fieldset>
-                    <div>
-                        <div class="col-md-10 center-block">
-                            <div class="post-header">
-                                <h1>Membership</h1>
-                            </div>
-                            <p>Already a member? <a href="index.html">Sign in here.</a></p>
-                            <hr>
-                            <div class="alert alert-info" role="alert">
-                                <p>Inputs with (<span class="required"></span>) is a required fields.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">First Name</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="FirstName" placeholder="First Name" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Last Name</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="LastName" placeholder="Last Name" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">MI</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="MI" placeholder="MI" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Gender</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                <select name="Gender" class="form-control">
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Birth date</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                <input name="Birthdate" placeholder="Birth date" class="form-control datepicker" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">City/Province</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-                                <input name="CityProvince" placeholder="City/Province" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Street</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-                                <input name="Street" placeholder="Street" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">User Name</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="UserName" placeholder="User Name" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Password</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
-                                <input name="Password" placeholder="Password" class="form-control" type="Password">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Confirm Password</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
-                                <input  placeholder="Confirm Password" class="form-control" type="password">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Email Address</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                <input name="EmailAddress" placeholder="Email Address" class="form-control" type="email">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Contact No.</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input name="ContactNo" placeholder="(639)" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Upload Picture</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-folder-close"></i></span>
-                                <input name="Picture" placeholder="Browse Image" class="form-control" type="file">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Direct Upline ID</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="DirectUpline" placeholder="Direct Upline ID" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Referer</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input name="Referrer" placeholder="Referrer" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Position</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-compressed"></i></span>
-                                <select name="Position" class="form-control">
-                                    <option>L</option>
-                                    <option>R</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Package Type</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-compressed"></i></span>
-                                <select name="PackageType" class="form-control">
-                                    <option>A</option>
-                                    <option>B</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label required">Validation Code</label>
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-compressed"></i></span>
-                                <input name="ValidationCode" placeholder="ValidationCode" class="form-control" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Button -->
-                    <div class="form-group">
-                        <div class="col-md-10">
-                            <button id ="membership_submit" type="submit" class="btn btn-primary pull-right">
-                                SUBMIT <span class="glyphicon glyphicon-send"></span>
-                            </button>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <div class="alert alert-danger" id="errorMsg" style="display:none">
+                            <strong>Sorry</strong>, something is not right.
     </div>
-</div> <!-- /container -->
+        <form role="form" class="register-form" id="frmlogin">
+            <h2>Sign in <small>manage your account</small></h2>
+            <div class="form-group">
+                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" class="form-control input-lg" id="exampleInputPassword1" placeholder="Password" required>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-6"><button type="submit" id="loginid" class="btn btn-primary btn-block btn-lg" tabindex="7" > <i id="iloader" class="fa fa-refresh fa-spin" style="display:none"></i> Sign in</button></div>
+                <div class="col-xs-12 col-md-6">Fogot your password? Click <a href="register.html">here</a></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blankline">
+                </div>
+            </div>
+        </div>
+        </div>

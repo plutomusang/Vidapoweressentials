@@ -2,255 +2,219 @@
     ViewBag.Title = "Home";
 }
 
-@section Scripts {
-    <script type="text/javascript" src="~/js/login.js"></script>
-}
+<!-- end header -->
+    <section id="featured" class="bg">
+    <!-- start slider -->
 
-
-    <!-- Static navbar -->
-
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-8 col-md-8">
-            <div id="vida-carousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#vida-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#vida-carousel" data-slide-to="1"></li>
-                    <li data-target="#vida-carousel" data-slide-to="2"></li>
-                    <li data-target="#vida-carousel" data-slide-to="3"></li>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="~/images/slider/slide1.jpg" alt="...">
-                    </div>
-                    <div class="item">
-                        <img src="~/images/slider/slide2.jpg" alt="...">
-                    </div>
-                    <div class="item">
-                        <img src="~/images/slider/slide3.jpg" alt="...">
-                    </div>
-                    <div class="item">
-                        <img src="~/images/slider/slide4.jpg" alt="...">
-                    </div>
-                </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#vida-carousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#vida-carousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4">
-            <div class="account-wall">
-                <img class="img-circle center-block" src="/images/sign-in-form-image.png" alt="">
-                <form id="frmlogin" class="form-signin">
-                    <div class="form-group">
-                        <input id="email" type="text" class="form-control" placeholder="Email" required autofocus>
-                        <span class="help-block has-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <input id="password" type="password" class="form-control" placeholder="Password" required>
-                        <span class="help-block has-error"></span>
-                    </div>
-                    <button id="loginid" class="btn btn-lg btn-primary btn-block" type="submit"><i id="iloader" class="fa fa-refresh fa-spin" style="display:none"></i> Sign in</button>
-
-                    <label class="checkbox pull-left">
-                        <input type="checkbox" value="remember-me">Remember me
-                    </label>
-                    <a href="#" class="pull-right new-account">Create an account</a>
-                    <span class="clearfix"></span>
-                </form>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="content col-md-8">
+            
+    <!-- start slider -->
+    <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3><b>Power Drops (Marunggay)</b></h3>
-                        <div class="product-caption">
-                            <p>Our Marunggay Power Drops is based on All Natural Freshly picked Malunggay. We added peppermint leaves for cooling effect, and natural honey for extra taste and healing properties.</p>
-                        </div>
+            <div class="col-lg-12">
+    <!-- Slider -->
+        <div id="main-slider" class="main-slider flexslider">
+            <ul class="slides">
+              <li>
+                <img src="~/images/slider/slide5.jpg" alt="" />
+                <div class="flex-caption">
+                    <h3>Product 1</h3> 
+                    <p>Duis fermentum auctor ligula ac malesuada. Mauris et metus odio, in pulvinar urna</p> 
+                    <a href="#" class="btn btn-theme">Learn More</a>
+                </div>
+              </li>
+              <li>
+                <img src="~/images/slider/slide5.jpg" alt="" />
+                <div class="flex-caption">
+                    <h3>Product 2</h3> 
+                    <p>Sodales neque vitae justo sollicitudin aliquet sit amet diam curabitur sed fermentum.</p> 
+                    <a href="#" class="btn btn-theme">Learn More</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+    <!-- end slider -->
+            </div>
+        </div>
+    </div>  
 
-                        <div class="thumbnail">
 
-                            <img src="~/images/Power_Drops.gif" alt="..." class="img-responsive">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="product_benefits">
-                            <h3><b>Benefits:</b></h3>
-                            <ol>
-                                <li>Perfect remedy for cough, fever, and even asthma attacks. </li>
-                                <li>Strengthens Immune System and used to boost body stamina and energy. </li>
-                                <li>Can help restore skin condition, control blood pressure, relieve headaches and migraines.</li>
-                                <li>Has 48 Antio-Oxidants, thus, helps fight cancer.</li>
-                                <li>Helps normalize blood sugar level therefore preventing diabetes.</li>
-                                <li>Lowers Blood Pressure and Blood Cholesterol Level.</li>
-                                <li>Improves Digestion.</li>
-                                <li>Can heal Ulcers.</li>
-                                <li>If used as facial moisturizer, it can minimize pores which gives your face a finer look. Also treats pimples.</li>
-                                <li>Gives you a Good Night Sleep.</li>
-                                <li>
-                                    Packed with higher Vitamin and Mineral powers.
-                                    <ul>
-                                        <li>9x Protein in Yogurt</li>
-                                        <li>15x Pottassium in Banana</li>
-                                        <li>10x Vitamin A in Carrots</li>
-                                        <li>17x Calcium in Milk</li>
-                                        <li>12x Vitamin C in Orange</li>
-                                        <li>3x Vitamin E in Almonds</li>
-                                        <li>25x Iron in Spinach</li>
-                                    </ul>
-                                </li>
-                            </ol>
-                        </div>
-                        <div class="product_direction_of_use">
-                            <h3><b>Directions of Use:</b></h3>
-                            <ol>
-                                <li>Can be taken Orally or Used externally.</li>
-                                <li>If used orally, we recommend taking it 2x daily to about half a teaspoon dosage or as desired. Absolutely NO Overdose.</li>
-                                <li>If used externally, apply needed amount on affected area for treatment.</li>
-                            </ol>
-                        </div>
-                    </div>
+    </section>
+
+
+    <section class="callaction">
+    <div class="container">
+        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="cta-text">
+                                    <h2>Be a <span>member</span> and enjoy the benifits</h2>
+                                    <p> Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam. Vivamus porttitor eros quis nisi lacinia sed interdum</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="cta-btn">
+                                    <a href="#" class="btn btn-theme btn-lg">Grab it now <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>  
+        </div>
+    </div>
+    </section>
+
+
+    <!-- divider -->
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="solidline">
                 </div>
             </div>
+        </div>
+        </div>
+        <!-- end divider -->
 
-            <div class="col-md-12">
+
+
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h3><b>Power Oil (Turmeric)</b></h3>
-                        <div class="product-caption">
-                            <p>Our Power Oil is designed not only for massage but for those people suffering with arthritis, rheuma, gout, back pain, muscle pain, headache, and even inflammation.</p>
-                            <p>Vida Power Essentials has created 2 variants as we understand that some people prefer it <b>Lite</b>, while others prefer it <b>Strong</b>. </p>
-                        </div>
-                        <div class="thumbnail">
-                            <img src="~/images/Power_Oil.png" alt="..." class="img-responsive">
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="product_direction_of_use">
-                            <h3><b>Directions of Use:</b></h3>
-                            <ol>
-                                <li>For EXTERNAL use only. </li>
-                                <li>Apply ample amount to affected area.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3><b>Power Rub (Green Apple + Turmeric)</b></h3>
-                        <div class="product-caption">
-                            <p>Among the many notable benefits of Green Apples is its content that's best for people on a diet. Vida Power Essentials revolutionized the use of Green Apple and align it with our primary products, thus, through inhalation of our Power Rub, your appetite can be controlled if not suppressed.</p>
-
-                        </div>
-                        <div class="thumbnail">
-                            <img src="~/images/Power_Rub.gif" alt="..." class="img-responsive">
-                        </div>
+                    <div class="col-sm-12 col-lg-12">
+                        <h4>About our company</h4>
+                        <p><strong>Meliore inciderint qui ne. Suas cotidieque vel ut lobortis reformidans duo</strong></p>
                         <p>
-                            Our Power Rub also improves alertness which makes this product perfect, especially if you are driving. Put it in your car's front panel. You not only have a car freshener, you also decrease chances of being in an accident.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae odit iste exercitationem praesentium deleniti nostrum laborum rem id nihil tempora. Adipisci ea commodi unde nam placeat cupiditate quasi a ducimus rem consequuntur ex eligendi minima voluptatem assumenda voluptas quidem sit maiores odio velit voluptate
+                        </p>
+                        <p>
+                        Mel explicari adipiscing consectetuer no, no mel apeirian scripserit repudiandae, ad assum mundi scribentur eam. Graecis offendit phaedrum eu his, eius ferri quidam eos ad, quis delenit vel ei. Alia modus facete te eos, eu tation appellantur per
                         </p>
                     </div>
-                    <div class="col-md-6">
-                        <div class="product_direction_of_use">
-                            <h3><b>Directions of Use:</b></h3>
-                            <ol>
-                                <li>For EXTERNAL use only. </li>
-                                <li>Apply ample amount to affected area.</li>
-                                <li>Inhale vapor to treat nausea, control appetite, and improve alertness.</li>
-                            </ol>
-                        </div>
-                    </div>
                 </div>
             </div>
-
         </div>
-    </div>
-
-    <div class="content col-md-4">
-        <div class="post-header">
-            <h1>Testimonials</h1>
         </div>
+        
+  <!-- divider -->
+        <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="testimonials">
-                    <div class="active item">
-                        <blockquote>
-                            <p>Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p>
-                        </blockquote>
-                        <div class="client-info">
-                            <img alt="" src="http://keenthemes.com/assets/bootsnipp/img1-small.jpg" class="pull-left">
-                            <div class="pull-left">
-                                <span class="testimonials-name">Lina Mars</span>
-                                <span class="testimonials-post">Commercial Director</span>
-                            </div>
-                        </div>
+            <div class="col-lg-12">
+                <div class="solidline">
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- end divider -->
+
+
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-6">
+                        <h4>Power Drops (Marunggay)</h4>
+                        <img src="~/images/Power_Drops.gif" alt="" class="img-responsive pull-left" />
+                        <br/>
+                        <p>Our Marunggay Power Drops is based on All Natural Freshly picked Malunggay. We added peppermint leaves for cooling effect, and natural honey for extra taste and healing properties.
+                        </p>
+                        <br/>
+                        <h4>Directions of Use:</h4>
+                        <ol>
+                            <li>Can be taken Orally or Used externally.</li>
+                            <li>If used orally, we recommend taking it 2x daily to about half a teaspoon dosage or as desired. Absolutely NO Overdose.</li>
+                            <li>If used externally, apply needed amount on affected area for treatment.</li>
+                        </ol>
+                    </div>
+                    <div class="col-sm-6 col-lg-6">
+                        <h4>Benefits:</h4>
+                        <ul>
+                            <li>Perfect remedy for cough, fever, and even asthma attacks.</li>
+                            <li>Strengthens Immune System and used to boost body stamina and energy.</li>
+                            <li>Can help restore skin condition, control blood pressure, relieve headaches and migraines.</li>
+                            <li>Has 48 Antio-Oxidants, thus, helps fight cancer.</li>
+                            <li>Helps normalize blood sugar level therefore preventing diabetes.</li>
+                            <li>Lowers Blood Pressure and Blood Cholesterol Level.</li>
+                            <li>Improves Digestion.</li>
+                            <li>Can heal Ulcers.</li>
+                            <li>If used as facial moisturizer, it can minimize pores which gives your face a finer look. Also treats pimples.</li>
+                            <li>Gives you a Good Night Sleep.</li>
+                            <li>Packed with higher Vitamin and Mineral powers. 
+                            <ul>
+                                <li>9x Protein in Yogurt</li>
+                                <li>15x Pottassium in Banana</li>
+                                <li>10x Vitamin A in Carrots</li>
+                                <li>17x Calcium in Milk</li>
+                                <li>12x Vitamin C in Orange</li>
+                                <li>3x Vitamin E in Almonds</li>
+                                <li>17x Calcium in Milk</li>
+                            </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="testimonials">
-                    <div class="active item">
-                        <blockquote>
-                            <p>Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p>
-                        </blockquote>
-                        <div class="client-info">
-                            <img alt="" src="http://keenthemes.com/assets/bootsnipp/img1-small.jpg" class="pull-left">
-                            <div class="pull-left">
-                                <span class="testimonials-name">Lina Mars</span>
-                                <span class="testimonials-post">Commercial Director</span>
-                            </div>
-                        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-6">
+                        <h4>Power Oil (Turmeric)</h4>
+                        
+                        <p>Among the many notable benefits of Green Apples is its content that's best for people on a diet. Vida Power Essentials revolutionized the use of Green Apple and align it with our primary products, thus, through inhalation of our Power Rub, your appetite can be controlled if not suppressed. </p>
+                        <p>Our Power Rub also improves alertness which makes this product perfect, especially if you are driving. Put it in your car's front panel. You not only have a car freshener, you also decrease chances of being in an accident. </p>
+                        <img src="~/images/Power_Oil.png" alt="" class="img-responsive pull-left" />
+                        <h4>Directions of Use:</h4>
+                        <ol>
+                            <li>Can be taken Orally or Used externally.</li>
+                            <li>If used orally, we recommend taking it 2x daily to about half a teaspoon dosage or as desired. Absolutely NO Overdose.</li>
+                            <li>If used externally, apply needed amount on affected area for treatment.</li>
+                        </ol>
+                    </div>
+                    <div class="col-sm-6 col-lg-6">
+                        <h4>Power Rub (Green Apple + Turmeric)</h4>
+   
+                        <p>Our Marunggay Power Drops is based on All Natural Freshly picked Malunggay. We added peppermint leaves for cooling effect, and natural honey for extra taste and healing properties.
+                        </p>
+                         <img src="~/images/Power_Rub.gif" alt="" class="img-responsive pull-left" />
+                        <br/>
+                        <h4>Directions of Use:</h4>
+                        <ol>
+                            <li>For EXTERNAL use only.</li>
+                            <li>Apply ample amount to affected area.</li>
+                             <li>Inhale vapor to treat nausea, control appetite, and improve alertness.</li>
+                        </ol>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="testimonials">
-                    <div class="active item">
-                        <blockquote>
-                            <p>Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p>
-                        </blockquote>
-                        <div class="client-info">
-                            <img alt="" src="http://keenthemes.com/assets/bootsnipp/img1-small.jpg" class="pull-left">
-                            <div class="pull-left">
-                                <span class="testimonials-name">Lina Mars</span>
-                                <span class="testimonials-post">Commercial Director</span>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+
+        </div>
+
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="solidline">
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="testimonials">
-                    <div class="active item">
-                        <blockquote>
-                            <p>Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p>
-                        </blockquote>
-                        <div class="client-info">
-                            <img alt="" src="http://keenthemes.com/assets/bootsnipp/img1-small.jpg" class="pull-left">
-                            <div class="pull-left">
-                                <span class="testimonials-name">Lina Mars</span>
-                                <span class="testimonials-post">Commercial Director</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+<h4>Testimonials</h4>
+                        <div class="testimonialslide clearfix flexslider">
+                            <ul class="slides">
+                                <li><blockquote>
+                                Usu ei porro deleniti similique, per no consetetur necessitatibus. Ut sed augue docendi alienum, ex oblique scaevola inciderint pri, unum movet cu cum. Et cum impedit epicuri
+                                    </blockquote>
+                                    <h4>Mang Kanor <span>&#8213; Torjaker</span></h4> 
+                                </li>
+                                <li><blockquote>
+                                Usu ei porro deleniti similique, per no consetetur necessitatibus. Ut sed augue docendi alienum, ex oblique scaevola inciderint pri, unum movet cu cum. Et cum impedit epicuri 
+                                    </blockquote>
+                                    <h4>Lola Basyang <span>&#8213; Senior Citizen </span></h4>
+                                </li>   
+                            </ul>
+                        </div>      
             </div>
-            <div class="clearf"></div>
         </div>
     </div>
-</div>

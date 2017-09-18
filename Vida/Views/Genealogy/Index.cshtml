@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "GENEALOGY";
 }
 
 @section Scripts {
@@ -10,44 +10,68 @@
 
 
 <div class="container">
-    <div class="post-header">
-        <h1>Genealogy</h1>
-    </div>
 
-    <div class="row">
-        <div class="tree">
-            <ul id="historyTree"></ul>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="blankline">
+                </div>
+            </div>
         </div>
-    </div>
+        </div>
 
     <div class="row">
+         <div class="col-md-4 panel panel-default">
+         <h5>Un-assigned Profile</h5>
+             <table class="table" id="tblResult">
+            <thead>
+              <tr>
+                <th>Fullname</th>
+                <th>VCode</th>
+                <th>Copy</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>No record </td>
+                    <td></td>
+                  </tr
+            </tbody>
+          </table>
+         </div>
+        <div class="col-md-8">
         <div class="tree">
+                <ul id="historyTree">
+                </ul>
+            </div>
+
+            <div class="tree">
             <ul id="treeChart">
             </ul>
         </div>
+        </div>
     </div>
 </div> <!-- /container -->
-
-
 <div class="modal fade" id="Assign-downline" tabindex="-1" role="dialog" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-              <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
                 <h4 id="assignTitle" class="modal-title">Add to Existing Account</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" id="contact_form">
                     <fieldset>
-                          <!--  <div>
+                        <div id="new_section">
+                            <div>
                                 <div class="col-md-12 center-block">
                                     <div class="alert alert-info" role="alert">
                                         <p>Inputs with (<span class="required"></span>) is a required fields.</p>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                             <!-- Text input-->
-                            <div id="profile_section">
                             <div class="form-group">
                                 <label class="col-md-4 control-label required">First Name</label>
                                 <div class="col-md-6">
@@ -77,9 +101,7 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
                             <!-- Text input-->
-                            <div id="contact_section">
                             <div class="form-group">
                                 <label class="col-md-4 control-label required">City/Province</label>
                                 <div class="col-md-6">
@@ -99,158 +121,120 @@
                                     </div>
                                 </div>
                             </div>
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label required">Email Address</label>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input name="EmailAddress" placeholder="Email Address" class="form-control" type="email">
-									</div>
-								</div>
-							</div>
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label required">Password</label>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
-										<input name="Password" placeholder="Password" class="form-control" type="Password">
-									</div>
-								</div>
-							</div>
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label required">Confirm Password</label>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
-										<input name="confirm_password" placeholder="Confirm Password" class="form-control" type="password">
-									</div>
-								</div>
-							</div>
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label required">Contact No.</label>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-										<input name="contact_no" placeholder="(639)" class="form-control" type="text">
-									</div>
-								</div>
-							</div>
-                            </div>
-							<!-- Text input-->
-                            <div id="network_section" style="display:none">
-							<div class="form-group">
-								<label class="col-md-4 control-label required">Referer</label>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-										<input id ="mReferer" name="Referer" placeholder="Referer" class="form-control" type="text">
-									</div>
-								</div>
-							</div>
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label required">Direct Upline</label>
-								<div name="Direct_Upline_ID" class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-										<input id ="mDirect_Upline_ID" name="Direct_Upline_ID" placeholder="Verification Code" class="form-control" type="text">
-									</div>
-								</div>
-							</div>
-]
-
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label required">Position</label>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-										<input id="mGroup" name="Group" placeholder="Verification Code" class="form-control" type="text">
-									</div>
-								</div>
-							</div>
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label required">Package Type</label>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-										<input id="mPackageType" name="PackageType" placeholder="Verification Code" class="form-control" type="text">
-									</div>
-								</div>
-							</div>
-
-						</div>
-                        </div>
-
-						<!-- Text input-->
-                        <div id="verify_section">
-						<div class="form-group">
-							<label class="col-md-4 control-label required">Verification Code</label>
-							<div class="col-md-6">
-								<div class="input-group">
-
-									<span class="input-group-addon"><i class="glyphicon glyphicon-thumbs-up"></i></span>
-									<input id ="vCode" name="ValidationCode" placeholder="Verification Code" class="form-control" type="text">
-								    <span class="input-group-addon">
-                                        <button id="btnVerify" >
-                                            Check <span class="glyphicon glyphicon-search"></span>
-                                        </button>
-                                    </span>
-								    
-
-									<span class="input-group-addon"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
-									<input name="ValidationCode" placeholder="Verification Code" class="form-control" type="text">
-
-								</div>
-                                <div id="packageType"></div>
-							</div>
-						</div>
-                        <div class="form-group">
-                            <div class="col-md-10">
-                                <button type="button" id="verify_next" class="btn btn-primary pull-right">
-                                    Verify <span class="glyphicon glyphicon-send"></span>
-                                </button>
-                                <a href="#" id="cancel" class="btn btn-default pull-right">Cancel</a>
-                            </div>
-                        </div>
-                        </div>
-                        <!-- Button -->
-
-                        <div class="form-group ">
-
-                        <div id="verify_view_section">
+                            <!-- Text input-->
                             <div class="form-group">
-                            <label class="col-md-4 control-label ">Verification Code</label>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon">char char</span>
+                                <label class="col-md-4 control-label required">Email Address</label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                        <input name="EmailAddress" placeholder="Email Address" class="form-control" type="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label required">Password</label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+                                        <input name="Password" placeholder="Password" class="form-control" type="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label required">Confirm Password</label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+                                        <input name="confirm_password" placeholder="Confirm Password" class="form-control" type="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label required">Contact No.</label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                        <input name="contact_no" placeholder="(639)" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label required">Referer</label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                        <input id ="mReferer" name="Referer" placeholder="Referer" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label required">Direct Upline</label>
+                                <div name="Direct_Upline_ID" class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                        <input id ="mDirect_Upline_ID" name="Direct_Upline_ID" placeholder="Verification Code" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label required">Position</label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                        <input id="mGroup" name="Group" placeholder="Verification Code" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label required">Package Type</label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                        <input id="mPackageType" name="PackageType" placeholder="Verification Code" class="form-control" type="text">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
-                        <div id="final_section">
+
+                        <!-- Text input-->
                         <div class="form-group">
-
-                            <div class="col-md-10">
-                                <button id="btnSubmit" type="submit" class="btn btn-primary pull-right hidden">
-                                    SUBMIT <span class="glyphicon glyphicon-send"></span>
-                                </button>
-
-								<button id="btnNext" type="submit" class="btn btn-primary pull-right hidden">
-									Next <span class="glyphicon glyphicon-forward"></span>
-								</button>
-                                <a href="#" id="cancel" class="btn btn-default pull-right">Cancel</a>
+                            <label class="col-md-4 control-label required">Verification Code</label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-thumbs-up"></i></span>
+                                    <input id ="vCode" name="ValidationCode" placeholder="Verification Code" class="form-control" type="text">
+                                    <span class="input-group-addon">
+                                        <button id="btnVerify" >
+                                             <span class="glyphicon glyphicon-search"></span>Check
+                                        </button>
+                                    </span>
+                                    
+                                </div>
+                                <div id="packageType"></div>
                             </div>
                         </div>
-                        </div>
+                        <!-- Button -->
+
                     </fieldset>
                 </form>
             </div>
+
+             <div class="modal-footer" id="footerM" style="display:none">
+         <button id="btnSubmit" type="submit" class="btn btn-primary pull-right">
+                                    SUBMIT <span class="glyphicon glyphicon-send"></span>
+                                </button>
+                                <button id="btnNext" type="submit" class="btn btn-primary pull-right hidden">
+                                    Next <span class="glyphicon glyphicon-forward"></span>
+                                </button>
+      </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
