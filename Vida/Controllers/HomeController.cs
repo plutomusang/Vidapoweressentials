@@ -69,7 +69,12 @@ namespace Vida.Controllers
         public ActionResult Signout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+			Session["userId"] = null;
+			Session["token"]  = null;
+			Session["email"]  = null;
+			Session["token"]  = null;
+
+	   		return RedirectToAction("Index", "Home");
 
         }
 
