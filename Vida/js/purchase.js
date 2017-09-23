@@ -6,6 +6,10 @@ $(window).ready(function () {
         event.preventDefault();
         searchName();
     });
+	$('#searchButton').click(function (event) {
+		event.preventDefault();
+		searchName();
+	});
 
     $('#btnSubmitReg').click(function(e){
         submitRegistration();
