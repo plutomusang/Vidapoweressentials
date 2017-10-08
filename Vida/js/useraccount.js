@@ -19,6 +19,10 @@ function getProfile(rawData){
     tmpl = tmpl.replace('[address]',data.Street + ' ' + data.CityProvince);
     tmpl = tmpl.replace('[contact]',data.ContactNo);
 
+    tmpl = tmpl.replace('[pairingbonus]', data.PairingBunos);
+    tmpl = tmpl.replace('[referrals]', data.RefferralBunos);
+    tmpl = tmpl.replace('[withdrawals]', data.TotalWithdrawals);
+    tmpl = tmpl.replace('[balance]', data.Balance);
 
      $("#profile").html(tmpl);
 }
