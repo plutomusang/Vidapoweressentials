@@ -18,6 +18,8 @@ function getProfile(rawData){
     tmpl = tmpl.replace('[gender]',data.Gender =='M'?'Male':'Femail');
     tmpl = tmpl.replace('[address]',data.Street + ' ' + data.CityProvince);
     tmpl = tmpl.replace('[contact]',data.ContactNo);
+    tmpl = tmpl.replace('[AccountID]', data.AccountID);
+    tmpl = tmpl.replace('[email]', data.Username);
 
     tmpl = tmpl.replace('[pairingbonus]', data.PairingBunos);
     tmpl = tmpl.replace('[referrals]', data.RefferralBunos);

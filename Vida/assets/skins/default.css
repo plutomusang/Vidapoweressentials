@@ -194,6 +194,14 @@ ul.clients li:hover {
     background-color: #d9232d;
 }
 
+
+/* Header */
+.vidaHeader {
+    background-image: url('../../images/grasssmall.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top left;
+}
 /* pagination */
 #pagination a:hover {
     background: #d9232d;
