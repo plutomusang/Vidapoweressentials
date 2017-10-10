@@ -18,6 +18,10 @@ ul.meta-post li a:hover, ul.cat li a:hover, ul.recent li h6 a:hover, ul.portfoli
     color: #d9232d;
 }
 
+.withdrawButton {
+    position: relative;
+    float: right
+}
 header .nav li a:hover,
 header .nav li a:focus,
 header .nav li.active a,
@@ -201,6 +205,7 @@ ul.clients li:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: top left;
+    height: 100px;
 }
 /* pagination */
 #pagination a:hover {

@@ -7,8 +7,8 @@
 }
 
 <section id="content">
-<div class="container" id="profile">
-    <div class="row">
+<div class="container" id="profile" >
+    <div id ="accountdetails"class="row" >
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -16,26 +16,27 @@
                         <div class=" col-md-9 col-lg-9 ">
                             <table class="table">
                                 <tbody>
-                                    <tr>
-                                        <td>Name:</td>
-                                        <td>[fullname]</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address:</td>
-                                        <td>[address]</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Contact Number:</td>
-                                        <td>[contact]</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td><a href="mailto:[email]">[email]</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Account ID:</td>
-                                        <td>[AccountID]</td>
-                                    </tr>
+                                <tr >
+                                    <td width="150">Name:</td>
+                                    <td>[fullname]</td>
+                                </tr>
+                                <tr>
+                                    <td>Address:</td>
+                                    <td>[address]</td>
+                                </tr>
+                                <tr>
+                                    <td>Contact Number:</td>
+                                    <td>[contact]</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>[email]</td>
+                                    @*<td><a href="mailto:[email]">[email]</a></td>*@
+                                </tr>
+                                <tr>
+                                    <td>Account ID:</td>
+                                    <td>[AccountID]</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -45,25 +46,71 @@
         </div>
         <div class="col-md-6">
             <table class="table">
+
                 <tbody>
-                    <tr>
-                        <td>Pairing Bonus:</td>
-                        <td><span>[pairingbonus]</span></td>
-                    </tr>
-                    <tr>
-                        <td>Referrals:</td>
-                        <td><span>[referrals]</span></td>
-                    </tr>
-                    <tr>
-                        <td>Withdrawals:</td>
-                        <td><span>[withdrawals]</span></td>
-                    </tr>
-                    <tr>
-                        <td>Balance:</td>
-                        <td><span>[balance]</span></td>
-                    </tr>
+                
+                <tr>
+                    <td width="150">Pairing Bonus:</td>
+                    <td><span>[pairingbonus]</span></td>
+                </tr>
+                <tr>
+                    <td>Referrals:</td>
+                    <td><span>[referrals]</span></td>
+                </tr>
+                <tr>
+                    <td>Rebate:</td>
+                    <td><span></span></td>
+                </tr>
+                <tr>
+                    <td>Unilevel:</td>
+                    <td><span></span></td>
+                </tr>
+                <tr>
+                    <td>Withdrawals:</td>
+                    <td><span>[withdrawals]</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Balance:</h4></td>
+                    <td>
+                       
+                        <span><h4>[balance] <button id="btnWithdraw1" type="button" onclick="WithdrawalStep1();" class="btn btn-primary btn-sm withdrawButton">Withdraw</button></h4></span>
+                    </td>
+
+                </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row" id="Withdrawalslip" style="display:none">
+        <div class="col-md-12">
+            <h4>Withdrawal Slip</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">Account Name:</div>
+                    <div class="col-xs-6 col-sm-3">[acntName]</div>
+                </div>                
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">Total Incentive:</div>
+                    <div class="col-xs-6 col-sm-3">[wdbalance]</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">Less 10% Tax:</div>
+                    <div class="col-xs-6 col-sm-3">[Tax]</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3"><h4>Total Recievable:</h4>
+                    </div>
+                    <div class="col-xs-6 col-sm-3"><h4>[TotalRcv]</h4>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3"></div>
+                    <div class="col-xs-6 col-sm-3"><button id="btnWithdrawCancel" onclick="HideWithdrawal();" type="button" class="btn btn-warning btn-sm">Cancel</button> &nbsp; <button id="btnWithdrawFinal" type="button" onclick="HideWithdrawal();" class="btn btn-primary btn-sm">Withdraw</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
